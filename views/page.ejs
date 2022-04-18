@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse</title>
+
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="shortcut icon" href="/assets/icon/pulse_icons.jpeg" type="image/x-icon">
+
+</head>
+<body>
+
+    <div class="nav">
+        
+        <li class="app_name"> <img src="/assets/icon/pulse_icons.jpeg" class="app_avatar" height="120px" alt=""> </li>
+        
+    </div>
+
+    <section class="data_layout">
+        <div class="title_data">
+           <%= info.items[0].title %>
+        </div>
+
+        <div class="minor_data">
+            <div class="author_name"> <%= info.items[0].author %></div>
+            <div class="date_time">| <%= String(new Date(info.items[0].created)).substring(0,21);%></div>
+        </div>
+
+        <div class="directory_data">
+            <a href="<%= info.items[0].link %>"><img src="/assets/icon/pulse_icons.jpeg" height="40px" alt=""></a>
+        </div>
+
+        <div class="description_data">
+            <%= info.items[0].description %>
+        </div>
+
+        <img src="<%= info.items[0].media.content[0].url[0]%>" alt="news_img">
+        <div class="news_img_label"><%= info.items[0].media.content[0]['media:description'][0]._ %></div>
+
+        <div class="content_data content">
+            
+            <%= new String(info.items[0].content) %> 
+            
+        </div>
+
+        
+        <div class="rec_articles_title">
+            <div class="rec_titles">
+                Recommended articles 
+            </div> 
+            <div class="title_border">
+                
+            </div> 
+        </div>
+
+        <div class="big_recommended_articles">
+
+            <div class="articles">
+                
+                <div class="page_directory">
+                    <a href="<%= info.items[1].link %>" class="" target="_blank">
+                        <img src="<%= info.items[1].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[1].title %> </footer>
+                    </a>
+                </div>
+
+                <div class="page_directory">
+                    <a href="<%= info.items[2].link %>" class="" target="_blank">
+                        <img src="<%= info.items[2].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[2].title %> </footer>
+                    </a>
+                </div>
+
+                <div class="page_directory">
+                    <a href="<%= info.items[3].link %>" class="" target="_blank">
+                        <img src="<%= info.items[3].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[3].title %> </footer>
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="articles">
+                <div class="page_directory">
+                    <a href="<%= info.items[4].link %>" class="" target="_blank">
+                        <img src="<%= info.items[4].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[4].title %> </footer>
+                    </a>
+                </div>
+
+                <div class="page_directory">
+                    <a href="<%= info.items[5].link %>" class="" target="_blank">
+                        <img src="<%= info.items[5].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[5].title %> </footer>
+                    </a>
+                </div>
+
+                <div class="page_directory">
+                    <a href="<%= info.items[6].link %>" class="" target="_blank">
+                        <img src="<%= info.items[6].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[6].title %> </footer>
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="articles">
+                <div class="page_directory">
+                    <a href="<%= info.items[7].link %>" class="" target="_blank">
+                        <img src="<%= info.items[7].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[7].title %> </footer>
+                    </a>
+                </div>
+
+                <div class="page_directory">
+                    <a href="<%= info.items[8].link %>" class="" target="_blank">
+                        <img src="<%= info.items[8].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[8].title %> </footer>
+                    </a>
+                </div>
+
+                <div class="page_directory">
+                    <a href="<%= info.items[9].link %>" class="" target="_blank">
+                        <img src="<%= info.items[9].media.content[0].url[0]%>" alt="" height="150px" class="linked_article_image">
+                        <footer class="linked_article_title"> <%= info.items[9].title %> </footer>
+                    </a>
+                </div>
+
+        </div>
+        
+    </section>
+
+</body>
+</html>
