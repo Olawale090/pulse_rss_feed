@@ -9,6 +9,24 @@ app.use("/carrier",express.static('carrier'))
 app.use("/style",express.static('style'))
 app.use("/assets",express.static('assets'))
 
+app.get("/query_string",(req,res)=>{
+
+    res.writeHead(200,{"Content-type" : "application/json"})
+
+    Feed.convert('https://www.pulse.com.gh/news/rss')
+        .then(function(json) {
+
+            var data_pipe = json;
+            // console.log(data_pipe);
+            res.end(JSON.stringify(data_pipe));
+            
+        })
+    .catch(function(err) {
+        console.log(err);
+    });
+
+});
+
 app.get("/page",(req,res)=>{
 
     Feed.convert('https://www.pulse.com.gh/news/rss')
