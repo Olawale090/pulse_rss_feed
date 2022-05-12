@@ -1,4 +1,3 @@
-
 class newsFeed {
     
     constructor(){
@@ -32,6 +31,11 @@ class newsFeed {
 
     }
 
+    fetchImages(){
+
+        
+    }
+
 
 }
 
@@ -39,13 +43,18 @@ class newsFeed {
 let newsContent = new newsFeed();
 newsContent.fetcFeed();
 
-// const newsFeed = function(){
-    
-// }
+class webWorker{
+    constructor(){
 
-// newsFeed.prototype = {
-    
-// };
+    }
+
+    passWorker(){
+        if(window.Worker){
+            let pulseWorker = new Worker("/contentworker.js");
+            pulseWorker.postMessage()
+        }
+    }
+}
 
 
 
