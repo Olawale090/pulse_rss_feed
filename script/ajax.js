@@ -31,30 +31,36 @@ class newsFeed {
 
     }
 
-    fetchImages(){
+    passImageWorker(){
 
-        
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:1010/query_string',true);
+
+        xhr.onload = ()=>{
+            if (xhr.status === 200) {
+
+                let news = JSON.parse(xhr.responseText);
+                if(window.Worker){
+                    let pulseWorker = new Worker("/contentworker.js");
+                    pulseWorker.postMessage(news)
+                }
+               
+            } else if(this.status === 404) {
+                alert("page not found ");
+            }
+        }
+
     }
 
-
+    
 }
 
 
 let newsContent = new newsFeed();
 newsContent.fetcFeed();
+newsContent.fetchImages()
 
-class webWorker{
-    constructor(){
 
-    }
-
-    passWorker(){
-        if(window.Worker){
-            let pulseWorker = new Worker("/contentworker.js");
-            pulseWorker.postMessage()
-        }
-    }
-}
 
 
 
