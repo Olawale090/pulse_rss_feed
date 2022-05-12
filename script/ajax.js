@@ -16,7 +16,7 @@ class newsFeed {
             if (xhr.status === 200) {
 
                 let news = JSON.parse(xhr.responseText);
-                console.log(news.items[0].content.split("<p> </p>"));
+                console.log(news.items[0].content.split("<img/>"));
 
                 this.content.innerHTML = news.items[0].content;
 
@@ -58,7 +58,7 @@ class newsFeed {
 
 let newsContent = new newsFeed();
 newsContent.fetcFeed();
-newsContent.fetchImages()
+newsContent.passImageWorker();
 
 
 

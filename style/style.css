@@ -121,6 +121,10 @@ a{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.content>figure>img{
+    max-width: 100%;
+}
+
 
 
 .enclosure_data{

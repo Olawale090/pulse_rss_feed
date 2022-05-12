@@ -4,9 +4,6 @@ const Feed = require('rss-in-json');
 const app = express();
 const cluster = require("cluster")
 const os = require("os");
-
-console.log(os.cpus().length);
-
 const cpuNumber = os.cpus().length;
 
 app.set("view engine","ejs");
@@ -65,9 +62,9 @@ if(cluster.isMaster){
     cluster.on("exit",(worker,code,signal)=>{
         cluster.fork()
     })
-    
+
 }else{
     app.listen(1010,()=>{
-        console.log(`server running on cpu of id: ${process.pid} localhost:1010/`);
+        console.log(`cpu ${process.pid}`);
     });
 }
