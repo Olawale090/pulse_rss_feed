@@ -13,7 +13,8 @@ class webWorker{
                }
 
                pulseworker.onmessage = function(e){
-                   console.dir(e.data.result)
+                   console.dir(e.data.result);
+                   console.log(e.data.result);
                };
            }
        }
